@@ -49,6 +49,12 @@ app.use('/api', todoRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/api", authRoutes);
 
+const cloudinaryRoutes = require('./routes/file-upload.routes')
+app.use("/api", cloudinaryRoutes);
+
+const stripeRoutes = require('./routes/stripe.routes')
+app.use("/api", stripeRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
 
